@@ -9,6 +9,30 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.user-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+  background-color: white;
+}
+
+.user-name {
+  font-size: 1.08rem;
+  font-weight: bold;
+  color : rgb(100, 100, 100);
+}
+
+.header-btns {
+  font-size: 1.5rem;
+  color: rgb(173, 173, 173);
+}
+
+.header-btn:hover {
+  cursor: pointer;
+}
+
 
 /* Main Structure */
 .main-wrapper {
@@ -20,3 +44,17 @@ body {
   width: 80%;
   height: 94%;
 }
+
+/* Contacts Column */
+.contacts-col {
+  width: 35%;
+  min-width: 360px;
+  height: 100%;
+  border-right: 2px solid rgb(233, 233, 233);
+}
+
+.contacts-header {
+  background-color: rgb(240, 240, 240);
+}
+
+/* Chat Column */
