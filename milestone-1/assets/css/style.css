@@ -9,7 +9,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.user-icon {
+.circle-img {
   width: 55px;
   height: 55px;
   border-radius: 50%;
@@ -21,15 +21,16 @@ body {
 .user-name {
   font-size: 1.08rem;
   font-weight: bold;
-  color : rgb(100, 100, 100);
+  color : rgb(88, 88, 88);
 }
 
 .header-btns {
   font-size: 1.5rem;
-  color: rgb(173, 173, 173);
+  color: rgb(197, 197, 197);
 }
 
 .header-btn:hover {
+  transform: scale(1.1);
   cursor: pointer;
 }
 
@@ -37,7 +38,7 @@ body {
 /* Main Structure */
 .main-wrapper {
   height: 100vh;
-  background: linear-gradient(0deg, rgb(223, 223, 223) 84%, rgba(0,150,136,1) 84%);
+  background: linear-gradient(0deg, rgb(219, 219, 211) 84%, rgba(0,150,136,1) 84%);
 }
 
 .gp-container {
@@ -47,14 +48,90 @@ body {
 
 /* Contacts Column */
 .contacts-col {
+  height: 100%;
   width: 35%;
   min-width: 360px;
   height: 100%;
-  border-right: 2px solid rgb(233, 233, 233);
+  border-right: 1px solid rgb(233, 233, 233);
 }
 
 .contacts-header {
+  height: 88px;
+  background-color: rgb(245, 245, 245);
+}
+
+.notifications {
+  height: 88px;
+  background-color: rgb(155, 224, 241);
+}
+
+.notifications .active-notifications {
+  font-size: 0.9rem;
+  color :rgb(88, 88, 88);
+}
+
+.notifications .active-notifications:hover {
+  cursor: pointer;
+}
+
+.notifications .bell {
+  font-size : 1.4rem;
+  color : rgb(155, 224, 241);
+}
+
+.search-chat {
+  height: 55px;
+  background-color: rgb(245, 245, 245);
+}
+
+.search-chat .search-lens {
+  background-color: white;
+  border: 0;
+  border-right: 2px solid rgb(233, 233, 233);
+  color: rgb(173, 173, 173);
+}
+
+.search-chat .search-lens:hover {
+  cursor : pointer;
+}
+
+.search-chat .search-lens:hover i{
+  transform: scale(1.1);
+}
+
+.contacts-list {
+  height: calc(100% - 231px);
+  background-color: white(155, 224, 241);
+  overflow-y : scroll;
+}
+
+.contacts-list .contact {
+  position: relative;
+  border-bottom: 1px solid rgb(233, 233, 233);
+}
+
+.contacts-list .contact:hover {
   background-color: rgb(240, 240, 240);
+  cursor: pointer;
+}
+
+.contacts-list .contact .message,
+.contacts-list .contact .date {
+  font-size: 0.9rem;
+  color : rgb(197, 197, 197);
+}
+
+.contacts-list .contact .message {
+  max-width: 400px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow : ellipsis;
+}
+
+.contacts-list .contact .date {
+  position : absolute;
+  right : 10px;
+  top : 10px;
 }
 
 /* Chat Column */

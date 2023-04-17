@@ -28,10 +28,14 @@
     <div class="main-wrapper d-flex justify-content-center align-items-center">
       <div class="gp-container bg-white">
 
+        <!-- Contacts Column -->
         <div class="contacts-col">
+
+          <!-- Contacts Header -->
           <div class="contacts-header d-flex justify-content-between align-items-center p-3">
+
             <div class="user d-flex justify-content-center align-items-center">
-              <div class="user-icon">
+              <div class="circle-img">
                 <img class="img-fluid" src="assets/img/my_avatar.jpg">
               </div>
               <span class="user-name">Gabriele Petralia</span>
@@ -42,14 +46,65 @@
               <i class="header-btn fa-solid fa-message me-4"></i>
               <i class="header-btn fa-solid fa-ellipsis-vertical"></i>
             </div>
-          </div>
-        </div>
 
+          </div>
+          <!-- /Contacts Header -->
+
+
+          <!-- Notifications -->
+          <div class="notifications d-flex align-items-center p-3">
+
+            <div class="circle-img d-flex justify-content-center align-items-center">
+              <i class="bell fa-solid fa-bell-slash"></i>
+            </div>
+            
+            <div>
+              <span class="fw-bold">Ricevi notifiche di nuovi messaggi</span>
+              <a class="active-notifications  d-block text-decoration-underline">Attiva notifiche desktop</a>
+            </div>
+            
+          </div>
+          <!-- /Notifications -->
+
+          <!-- Search Chat -->
+          <div class="search-chat d-flex align-items-center  px-3 py-2">
+            <div class="input-group">
+              <span class="input-group-text search-lens px-4" id="basic-addon1">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </span>
+              <input type="text" class="form-control border-0" placeholder="Cerca o inizia una nuova chat">
+            </div>
+          </div>
+          <!-- /Search Chat -->
+
+          <!-- Contacts List -->
+          <ul class="contacts-list list-unstyled">
+            <li v-for="contact in contacts" class="contact d-flex d-flex align-items-center p-3">
+              <div class="circle-img d-flex justify-content-center align-items-center">
+                <img class="img-fluid" :src="'assets/img/' + contact.avatar">
+              </div>
+            
+              <div>
+                <span class="user-name d-block">{{contact.name}}</span>
+                <span class="message d-block">{{contact.messages[0].message}}</span>
+              </div>
+
+              <span class="date">{{contact.messages[0].date}}</span>
+            </li>
+          </ul>
+          <!-- Contacts List -->
+
+        </div>
+        <!-- /Contacts Column -->
+
+
+        <!-- Chat Column -->
         <div class="chat-col">
           <div class="chat-header">
           
           </div>
         </div>
+        <!-- /Chat Column -->
 
       </div>
     </div>
