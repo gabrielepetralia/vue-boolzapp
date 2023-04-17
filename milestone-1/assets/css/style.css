@@ -26,10 +26,11 @@ body {
 
 .header-btns {
   font-size: 1.5rem;
-  color: rgb(197, 197, 197);
+  color: rgb(177, 177, 177);
 }
 
-.header-btn:hover {
+.header-btn:hover,
+.chat-input-btn:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -51,11 +52,11 @@ body {
   height: 100%;
   width: 35%;
   min-width: 360px;
-  height: 100%;
   border-right: 1px solid rgb(233, 233, 233);
 }
 
-.contacts-header {
+.contacts-header,
+.chat-header {
   height: 88px;
   background-color: rgb(245, 245, 245);
 }
@@ -115,13 +116,13 @@ body {
   cursor: pointer;
 }
 
-.contacts-list .contact .message,
+.contacts-list .contact .last-message,
 .contacts-list .contact .date {
   font-size: 0.9rem;
   color : rgb(197, 197, 197);
 }
 
-.contacts-list .contact .message {
+.contacts-list .contact .last-message {
   max-width: 400px;
   white-space: nowrap;
   overflow: hidden;
@@ -135,3 +136,28 @@ body {
 }
 
 /* Chat Column */
+.chat-col {
+  height: 100%;
+  width: 65%;
+}
+
+.chat-header .last-access {
+  font-size: 0.9rem;
+  color: rgb(177, 177, 177);
+}
+
+.chat-content {
+  height: calc(100% - 154px);
+  background-image: url("../img/mine.jpg");
+  overflow-y: scroll;
+}
+
+.chat-input {
+  height: 66px;
+  background-color: rgb(245, 245, 245);
+}
+
+.chat-input .chat-input-btn {
+  color :rgb(138, 138, 138);
+}
+
