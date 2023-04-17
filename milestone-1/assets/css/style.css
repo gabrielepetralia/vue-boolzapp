@@ -117,7 +117,7 @@ body {
 }
 
 .contacts-list .contact .last-message,
-.contacts-list .contact .date {
+.contacts-list .contact .time {
   font-size: 0.9rem;
   color : rgb(197, 197, 197);
 }
@@ -129,7 +129,7 @@ body {
   text-overflow : ellipsis;
 }
 
-.contacts-list .contact .date {
+.contacts-list .contact .time {
   position : absolute;
   right : 10px;
   top : 10px;
@@ -137,27 +137,74 @@ body {
 
 /* Chat Column */
 .chat-col {
-  height: 100%;
-  width: 65%;
+  height : 100%;
+  width : 65%;
+  min-width : 480px;
 }
 
 .chat-header .last-access {
-  font-size: 0.9rem;
-  color: rgb(177, 177, 177);
+  font-size : 0.9rem;
+  color : rgb(177, 177, 177);
 }
 
+/* chat content */
 .chat-content {
-  height: calc(100% - 154px);
-  background-image: url("../img/mine.jpg");
-  overflow-y: scroll;
+  height : calc(100% - 154px);
+  background-image : url("../img/mine.jpg");
+  overflow-y : scroll;
+  padding : 50px 25px 0px;
 }
+
+.message {
+  display : flex;
+}
+
+.sent {
+  justify-content : flex-end;
+}
+
+.received {
+  justify-content : flex-start;
+}
+
+.message p {
+  position: relative;
+  padding : 15px 35px 20px 20px;
+  max-width : 600px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.sent p {
+  background-color : rgb(213, 249, 186);
+  border-radius : 12px 0px 12px 12px;
+  margin-left : 50px;
+}
+
+.received p {
+  background-color : white;
+  border-radius: 0px 12px 12px 12px;
+  margin-right: 50px;
+}
+
+.time-message {
+  position : absolute;
+  bottom : 5px;
+  right : 10px;
+  font-size : 0.7rem;
+  color: rgb(188, 188, 188);
+}
+/* /chat content */
 
 .chat-input {
-  height: 66px;
-  background-color: rgb(245, 245, 245);
+  height : 66px;
+  background-color : rgb(245, 245, 245);
 }
 
 .chat-input .chat-input-btn {
-  color :rgb(138, 138, 138);
+  color : rgb(138, 138, 138);
 }
 
+.chat-input .chat-input-btn:last-child:active {
+  color : rgb(213, 36, 36);
+}
