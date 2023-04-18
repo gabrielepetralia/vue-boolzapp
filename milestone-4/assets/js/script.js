@@ -8,6 +8,7 @@ createApp({
       contacts,
       currChatIndex : 0,
       newMessage : "",
+      search : "",
     }
   },
 
@@ -36,6 +37,14 @@ createApp({
         }
         this.contacts[this.currChatIndex].messages.push(answer);
       },2000);
+    }
+  },
+
+  computed : {
+    filteredContacts() {
+      return this.contacts.filter( contact => {
+        return contact.name.toLowerCase().includes(this.search.toLowerCase())
+      })
     }
   },
 

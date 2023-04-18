@@ -2,7 +2,7 @@ const contacts = [
   {
     name: 'Michele',
     avatar: 'avatar_1.jpg',
-    visible: true,
+    id: 0,
     messages: [
       {
         date: '10/01/2020',
@@ -27,7 +27,7 @@ const contacts = [
   {
     name: 'Fabio',
     avatar: 'avatar_2.jpg',
-    visible: true,
+    id: 1,
     messages: [
       {
         date: '20/03/2020',
@@ -52,7 +52,7 @@ const contacts = [
   {
     name: 'Samuele',
     avatar: 'avatar_3.jpg',
-    visible: true,
+    id: 2,
     messages: [
       {
         date: '28/03/2020',
@@ -77,7 +77,7 @@ const contacts = [
   {
     name: 'Alessandro B.',
     avatar: 'avatar_4.jpg',
-    visible: true,
+    id: 3,
     messages: [
       {
         date: '10/01/2020',
@@ -96,7 +96,7 @@ const contacts = [
   {
     name: 'Alessandro L.',
     avatar: 'avatar_5.jpg',
-    visible: true,
+    id: 4,
     messages: [
       {
         date: '10/01/2020',
@@ -115,7 +115,7 @@ const contacts = [
   {
     name: 'Claudia',
     avatar: 'avatar_6.jpg',
-    visible: true,
+    id: 5,
     messages: [
       {
         date: '10/01/2020',
@@ -140,7 +140,7 @@ const contacts = [
   {
     name: 'Federico',
     avatar: 'avatar_7.jpg',
-    visible: true,
+    id: 6,
     messages: [
       {
         date: '10/01/2020',
@@ -159,7 +159,7 @@ const contacts = [
   {
     name: 'Davide',
     avatar: 'avatar_8.jpg',
-    visible: true,
+    id: 7,
     messages: [
       {
         date: '10/01/2020',
