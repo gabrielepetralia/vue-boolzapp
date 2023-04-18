@@ -9,6 +9,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Luxon -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.3.0/luxon.min.js"
+    integrity="sha512-KKbQg5o92MwtJKR9sfm/HkREzfyzNMiKPIQ7i7SZOxwEdiNCm4Svayn2DBq7MKEdrqPJUOSIpy1v6PpFlCQ0YA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   
   <!-- Vue -->
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -79,7 +84,11 @@
 
           <!-- Contacts List -->
           <ul class="contacts-list list-unstyled">
-            <li v-for="contact in contacts" class="contact d-flex d-flex align-items-center p-3">
+            <li
+              @click="currChatIndex = index"
+              v-for="(contact,index) in contacts"
+              class="contact d-flex d-flex align-items-center p-3">
+
               <div class="circle-img d-flex justify-content-center align-items-center">
                 <img class="img-fluid" :src="'assets/img/' + contact.avatar">
               </div>
@@ -106,12 +115,12 @@
           
             <div class="contact d-flex d-flex align-items-center p-3">
               <div class="circle-img d-flex justify-content-center align-items-center">
-                <img class="img-fluid" src="assets/img/my_avatar.jpg">
+                <img class="img-fluid" :src="'assets/img/' + contacts[currChatIndex].avatar">
               </div>
           
               <div>
-                <span class="user-name d-block">Gabriele Petralia</span>
-                <span class="last-access d-block">Ultimo accesso giorno 10/01/2020 alle 15:30</span>
+                <span class="user-name d-block">{{contacts[currChatIndex].name}}</span>
+                <span class="last-access d-block">Ultimo accesso giorno {{contacts[currChatIndex].messages[0].date}} alle {{contacts[currChatIndex].messages[0].time}}</span>
               </div>
             </div>
 
@@ -126,33 +135,8 @@
 
           <!-- Chat Content -->
           <div class="chat-content d-flex flex-column">
-            <div class="message sent">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, minima.<span class="time-message">10:10</span></p>
-            </div>
-            <div class="message received">
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, quia accusamus. Dolorum, minus repudiandae labore laudantium quam laborum. Nam culpa sed consequuntur unde cumque ullam maxime alias facilis numquam perferendis?<span class="time-message">10:15</span></p>
-            </div>
-            <div class="message sent">
-              <p>Ciao<span class="time-message">10:10</span></p>
-            </div>
-            <div class="message received">
-              <p>a<span class="time-message">10:10</span></p>
-            </div>
-            <div class="message sent">
-              <p>Ciaooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<span class="time-message">10:10</span></p>
-            </div>
-            <div class="message sent">
-              <p>a<span class="time-message">10:10</span></p>
-            </div>
-            <div class="message received">
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, quia accusamus. Dolorum, minus repudiandae labore
-                laudantium quam laborum. Nam culpa sed consequuntur unde cumque ullam maxime alias facilis numquam perferendis?<span
-                  class="time-message">10:15</span></p>
-            </div>
-            <div class="message received">
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, quia accusamus. Dolorum, minus repudiandae labore
-                laudantium quam laborum. Nam culpa sed consequuntur unde cumque ullam maxime alias facilis numquam perferendis?<span
-                  class="time-message">10:15</span></p>
+            <div v-for="message in contacts[currChatIndex].messages" class="message" :class="message.status === 'sent' ? 'sent' : 'received'">
+              <p>{{message.message}}<span class="time-message">{{message.time}}</span></p>
             </div>
           </div>
           <!-- /Chat Content -->

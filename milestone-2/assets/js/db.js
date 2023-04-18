@@ -6,9 +6,9 @@ const contacts = [
     messages: [
       {
         date: '10/01/2020',
-        time: '16:15',
-        message: 'Tutto fatto!',
-        status: 'received'
+        time: '15:30',
+        message: 'Hai portato a spasso il cane?',
+        status: 'sent'
       },
       {
         date: '10/01/2020',
@@ -18,9 +18,9 @@ const contacts = [
       },
       {
         date: '10/01/2020',
-        time: '15:30',
-        message: 'Hai portato a spasso il cane?',
-        status: 'sent'
+        time: '16:15',
+        message: 'Tutto fatto!',
+        status: 'received'
       }
     ],
   },
@@ -31,8 +31,8 @@ const contacts = [
     messages: [
       {
         date: '20/03/2020',
-        time: '16:35',
-        message: 'Mi piacerebbe ma devo andare a fare la spesa.',
+        time: '16:28',
+        message: 'Ciao come stai?',
         status: 'sent'
       },
       {
@@ -43,8 +43,8 @@ const contacts = [
       },
       {
         date: '20/03/2020',
-        time: '16:28',
-        message: 'Ciao come stai?',
+        time: '16:35',
+        message: 'Mi piacerebbe ma devo andare a fare la spesa.',
         status: 'sent'
       }
     ],
@@ -56,8 +56,8 @@ const contacts = [
     messages: [
       {
         date: '28/03/2020',
-        time: '10:25',
-        message: 'Ah scusa!',
+        time: '10:10',
+        message: 'La Marianna va in campagna',
         status: 'received'
       },
       {
@@ -68,8 +68,8 @@ const contacts = [
       },
       {
         date: '28/03/2020',
-        time: '10:10',
-        message: 'La Marianna va in campagna',
+        time: '10:25',
+        message: 'Ah scusa!',
         status: 'received'
       }
     ],
@@ -79,18 +79,18 @@ const contacts = [
     avatar: 'avatar_4.jpg',
     visible: true,
     messages: [
-        {
-          date: '10/01/2020',
-          time: '15:30',
-          message: 'Lo sai che ha aperto una nuova pizzeria?',
-          status: 'sent'
-        },
-        {
-          date: '10/01/2020',
-          time: '15:30',
-          message: 'Si, ma preferirei andare al cinema',
-          status: 'received'
-        }
+      {
+        date: '10/01/2020',
+        time: '15:30',
+        message: 'Lo sai che ha aperto una nuova pizzeria?',
+        status: 'sent'
+      },
+      {
+        date: '10/01/2020',
+        time: '15:35',
+        message: 'Si, ma preferirei andare al cinema',
+        status: 'received'
+      }
     ],
   },
   {
@@ -100,15 +100,15 @@ const contacts = [
     messages: [
       {
         date: '10/01/2020',
-        time: '15:50',
-        message: 'Va bene, stasera la sento',
-        status: 'received'
-      },
-      {
-        date: '10/01/2020',
         time: '15:35',
         message: 'Ricordati di chiamare la nonna',
         status: 'sent'
+      },
+      {
+        date: '10/01/2020',
+        time: '15:50',
+        message: 'Va bene, stasera la sento',
+        status: 'received'
       }
     ],
   },
@@ -119,8 +119,8 @@ const contacts = [
     messages: [
       {
         date: '10/01/2020',
-        time: '15:55',
-        message: 'Nessuna nuova, buona nuova',
+        time: '15:30',
+        message: 'Ciao Claudia, hai novità?',
         status: 'sent'
       },
       {
@@ -131,8 +131,8 @@ const contacts = [
       },
       {
         date: '10/01/2020',
-        time: '15:30',
-        message: 'Ciao Claudia, hai novità?',
+        time: '15:55',
+        message: 'Nessuna nuova, buona nuova',
         status: 'sent'
       }
     ],
@@ -144,15 +144,15 @@ const contacts = [
     messages: [
       {
         date: '10/01/2020',
-        time: '15:50',
-        message: 'Grazie per avermelo ricordato, le scrivo subito!',
-        status: 'received'
-      },
-      {
-        date: '10/01/2020',
         time: '15:30',
         message: 'Fai gli auguri a Martina che è il suo compleanno!',
         status: 'sent'
+      },
+      {
+        date: '10/01/2020',
+        time: '15:50',
+        message: 'Grazie per avermelo ricordato, le scrivo subito!',
+        status: 'received'
       }
     ],
   },
@@ -163,8 +163,8 @@ const contacts = [
     messages: [
       {
         date: '10/01/2020',
-        time: '15:55',
-        message: 'OK!!',
+        time: '15:30',
+        message: 'Ciao, andiamo a mangiare la pizza stasera?',
         status: 'received'
       },
       {
@@ -175,8 +175,8 @@ const contacts = [
       },
       {
         date: '10/01/2020',
-        time: '15:30',
-        message: 'Ciao, andiamo a mangiare la pizza stasera?',
+        time: '15:55',
+        message: 'OK!!',
         status: 'received'
       }
     ],
