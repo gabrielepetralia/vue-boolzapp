@@ -1,0 +1,210 @@
+/* General */
+* {
+  margin : 0;
+  padding : 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.circle-img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+  background-color: white;
+}
+
+.user-name {
+  font-size: 1.08rem;
+  font-weight: bold;
+  color : rgb(88, 88, 88);
+}
+
+.header-btns {
+  font-size: 1.5rem;
+  color: rgb(177, 177, 177);
+}
+
+.header-btn:hover,
+.chat-input-btn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+
+/* Main Structure */
+.main-wrapper {
+  height: 100vh;
+  background: linear-gradient(0deg, rgb(219, 219, 211) 84%, rgba(0,150,136,1) 84%);
+}
+
+.gp-container {
+  width: 80%;
+  height: 94%;
+}
+
+/* Contacts Column */
+.contacts-col {
+  height: 100%;
+  width: 35%;
+  min-width: 360px;
+  border-right: 1px solid rgb(233, 233, 233);
+}
+
+.contacts-header,
+.chat-header {
+  height: 88px;
+  background-color: rgb(245, 245, 245);
+}
+
+.notifications {
+  height: 88px;
+  background-color: rgb(155, 224, 241);
+}
+
+.notifications .active-notifications {
+  font-size: 0.9rem;
+  color :rgb(88, 88, 88);
+}
+
+.notifications .active-notifications:hover {
+  cursor: pointer;
+}
+
+.notifications .bell {
+  font-size : 1.4rem;
+  color : rgb(155, 224, 241);
+}
+
+.search-chat {
+  height: 55px;
+  background-color: rgb(245, 245, 245);
+}
+
+.search-chat .search-lens {
+  background-color: white;
+  border: 0;
+  border-right: 2px solid rgb(233, 233, 233);
+  color: rgb(173, 173, 173);
+}
+
+.search-chat .search-lens:hover {
+  cursor : pointer;
+}
+
+.search-chat .search-lens:hover i {
+  transform: scale(1.1);
+}
+
+.contacts-list {
+  height: calc(100% - 231px);
+  background-color: white(155, 224, 241);
+  overflow-y : scroll;
+}
+
+.contacts-list .contact {
+  position: relative;
+  border-bottom: 1px solid rgb(233, 233, 233);
+}
+
+.contacts-list .contact:hover {
+  background-color: rgb(240, 240, 240);
+  cursor: pointer;
+}
+
+.contacts-list .contact .last-message,
+.contacts-list .contact .time {
+  font-size: 0.9rem;
+  color : rgb(197, 197, 197);
+}
+
+.contacts-list .contact .last-message {
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow : ellipsis;
+}
+
+.contacts-list .contact .time {
+  position : absolute;
+  right : 10px;
+  top : 10px;
+}
+
+/* Chat Column */
+.chat-col {
+  height : 100%;
+  width : 65%;
+  min-width : 480px;
+}
+
+.chat-header .last-access {
+  font-size : 0.9rem;
+  color : rgb(177, 177, 177);
+}
+
+/* chat content */
+.chat-content {
+  height : calc(100% - 154px);
+  background-image : url("../img/mine.jpg");
+  overflow-y : scroll;
+  padding : 50px 25px 0px;
+}
+
+.message {
+  display : flex;
+}
+
+.sent {
+  justify-content : flex-end;
+}
+
+.received {
+  justify-content : flex-start;
+}
+
+.message p {
+  position: relative;
+  padding : 15px 35px 20px 20px;
+  max-width : 600px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.sent p {
+  background-color : rgb(213, 249, 186);
+  border-radius : 12px 0px 12px 12px;
+  margin-left : 50px;
+}
+
+.received p {
+  background-color : white;
+  border-radius: 0px 12px 12px 12px;
+  margin-right: 50px;
+}
+
+.time-message {
+  position : absolute;
+  bottom : 5px;
+  right : 10px;
+  font-size : 0.7rem;
+  color: rgb(188, 188, 188);
+}
+/* /chat content */
+
+.chat-input {
+  height : 66px;
+  background-color : rgb(245, 245, 245);
+}
+
+.chat-input .chat-input-btn {
+  color : rgb(138, 138, 138);
+}
+
+.chat-input .chat-input-btn:last-child:active {
+  color : rgb(213, 36, 36);
+}
