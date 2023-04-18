@@ -32,7 +32,7 @@ const contacts = [
       {
         date: '20/03/2020',
         time: '16:35',
-        message: 'Mi piacerebbe ma devo andare a fare la spesa. aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+        message: 'Mi piacerebbe ma devo andare a fare la spesa.',
         status: 'sent'
       },
       {
