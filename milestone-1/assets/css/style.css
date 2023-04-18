@@ -96,7 +96,7 @@ body {
   cursor : pointer;
 }
 
-.search-chat .search-lens:hover i{
+.search-chat .search-lens:hover i {
   transform: scale(1.1);
 }
 

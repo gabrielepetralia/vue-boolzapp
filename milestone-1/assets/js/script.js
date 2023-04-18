@@ -5,6 +5,7 @@ createApp({
   data() {
     return {
       contacts,
+      currChatIndex : 0,
     }
   },
 
