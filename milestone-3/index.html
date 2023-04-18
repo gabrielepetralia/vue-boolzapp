@@ -95,10 +95,10 @@
             
               <div>
                 <span class="user-name d-block">{{contact.name}}</span>
-                <span class="last-message d-block">{{contact.messages[0].message}}</span>
+                <span class="last-message d-block">{{contact.messages[contact.messages.length - 1].message}}</span>
               </div>
 
-              <span class="time">{{contact.messages[0].time}}</span>
+              <span class="time">{{contact.messages[contact.messages.length - 1].time}}</span>
             </li>
           </ul>
           <!-- Contacts List -->
@@ -120,7 +120,7 @@
           
               <div>
                 <span class="user-name d-block">{{contacts[currChatIndex].name}}</span>
-                <span class="last-access d-block">Ultimo accesso giorno {{contacts[currChatIndex].messages[0].date}} alle {{contacts[currChatIndex].messages[0].time}}</span>
+                <span class="last-access d-block">Ultimo accesso giorno {{contacts[currChatIndex].messages[contacts[currChatIndex].messages.length - 1].date}} alle {{contacts[currChatIndex].messages[contacts[currChatIndex].messages.length - 1].time}}</span>
               </div>
             </div>
 
@@ -146,7 +146,7 @@
             
             <i class="chat-input-btn fa-regular fa-face-smile fs-4 mx-5"></i>
 
-            <input type="text" class="form-control border-0" placeholder="Scrivi un messaggio">
+            <input v-model="newMessage" @keyup.enter="addNewMessage" type="text" class="form-control border-0" placeholder="Scrivi un messaggio">
 
             <i class="chat-input-btn fa-solid fa-microphone fs-4 mx-5"></i>
 
