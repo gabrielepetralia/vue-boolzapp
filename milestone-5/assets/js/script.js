@@ -58,18 +58,15 @@ createApp({
     },
 
     scrollDownVisible() {
-      const chatContent = document.querySelector('.chat-content');
-      if (chatContent.scrollTop >= (chatContent.scrollHeight - chatContent.clientHeight) && chatContent.scrollTop > 0) {
-        this.scrollDown = false;
-      } else {
-        this.scrollDown = true;
-      };
+      setTimeout(() => {
+        const chatContent = document.querySelector('.chat-content');
+        if (chatContent.scrollTop >= (chatContent.scrollHeight - chatContent.clientHeight)) {
+          this.scrollDown = false;
+        } else {
+          this.scrollDown = true;
+        };
+      }, 1);
     },
-
-    // scroll() {
-    //   const chatContent = document.querySelector('.chat-content');
-    //   if (chatContent[0].scrollHeight - chatContent.scrollTop() == div.height())  return "ciao";
-    // },
 
     closeDropdownMenus(index) {
       this.contacts.forEach( contact => {

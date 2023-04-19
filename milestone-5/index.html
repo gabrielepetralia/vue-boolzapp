@@ -89,7 +89,7 @@
           <ul class="contacts-list list-unstyled" :class="{'darkMode-background-black' : darkMode}">
             <li
               v-for="(contact,index) in filteredContacts"
-              @click="currChatIndex = contact.id, replaceInputMessage()"
+              @click="currChatIndex = contact.id, replaceInputMessage(), scrollDownVisible(), scrollDownChat()"
               class="contact d-flex align-items-center p-3" :class="{'darkMode-background-blackHover darkMode-borderBottom-black' : darkMode}, {'currContact' : currChatIndex === contact.id}, {'darkMode-currContact' : currChatIndex === contact.id && darkMode}">
 
               <div class="circle-img d-flex justify-content-center align-items-center">
