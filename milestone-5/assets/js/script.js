@@ -13,7 +13,8 @@ createApp({
       newMessage : "",
       search : "",
       darkMode : false,
-      notification : true,
+      notification : false,
+      scrollDown : false,
     }
   },
 
@@ -31,6 +32,7 @@ createApp({
         this.bufferInputMessage();
         this.botAnswerMessage();
         if(this.notification) messageSentSound.play();
+        this.scrollDownChat();
       }
     },
 
@@ -44,8 +46,30 @@ createApp({
         }
         this.contacts[this.currChatIndex].messages.push(answer);
         if(this.notification) messageReceivedSound.play();
+        this.scrollDownChat();
       },1500);
     },
+
+    scrollDownChat() {
+      setTimeout(() => {
+        const chatContent = document.querySelector('.chat-content');
+        chatContent.scrollTop = chatContent.scrollHeight;
+      }, 1);
+    },
+
+    scrollDownVisible() {
+      const chatContent = document.querySelector('.chat-content');
+      if (chatContent.scrollTop >= (chatContent.scrollHeight - chatContent.clientHeight) && chatContent.scrollTop > 0) {
+        this.scrollDown = false;
+      } else {
+        this.scrollDown = true;
+      };
+    },
+
+    // scroll() {
+    //   const chatContent = document.querySelector('.chat-content');
+    //   if (chatContent[0].scrollHeight - chatContent.scrollTop() == div.height())  return "ciao";
+    // },
 
     closeDropdownMenus(index) {
       this.contacts.forEach( contact => {

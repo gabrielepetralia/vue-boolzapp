@@ -144,7 +144,7 @@
           <!-- /Chat Header -->
 
           <!-- Chat Content -->
-          <div class="chat-content d-flex flex-column" :class="{'darkMode-background-image' : darkMode}">
+          <div @scroll="scrollDownVisible" class="chat-content d-flex flex-column" :class="{'darkMode-background-image' : darkMode}">
             <div v-for="(message,index) in contacts[currChatIndex].messages" class="message" :class="message.status === 'sent' ? 'sent' : 'received'">
               <div>{{message.message}}
                 <span class="time-message">{{message.time}}</span>
@@ -158,11 +158,16 @@
                 
               </div>
             </div>
+
           </div>
           <!-- /Chat Content -->
 
           <!-- Chat Input -->
           <div class="chat-input d-flex justify-content-around align-items-center" :class="{'darkMode-background-darkGray' : darkMode}">
+
+            <div @click="scrollDownChat()" :class="scrollDown ? 'd-block' : 'd-none'" class="scroll-down">
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
             
             <i class="chat-input-btn fa-regular fa-face-smile fs-4 mx-5"></i>
 

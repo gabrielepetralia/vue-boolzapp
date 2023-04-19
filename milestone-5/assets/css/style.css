@@ -35,7 +35,8 @@ body {
 
 .header-btn:hover,
 .chat-input-btn:hover,
-.message-chevron:hover {
+.message-chevron:hover,
+.scroll-down:hover i {
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -77,7 +78,9 @@ body {
 }
 
 .notifications .active-notifications:hover,
-.notifications .bell-notifications:hover {
+.notifications .bell-notifications:hover,
+.scroll-down:hover,
+.search-chat .search-lens:hover {
   cursor: pointer;
 }
 
@@ -96,10 +99,6 @@ body {
   border: 0;
   border-right: 2px solid rgb(233, 233, 233);
   color: rgb(173, 173, 173);
-}
-
-.search-chat .search-lens:hover {
-  cursor : pointer;
 }
 
 .search-chat .search-lens:hover i {
@@ -162,7 +161,8 @@ body {
   height : calc(100% - 154px);
   background-image : url("../img/bg-light.jpg");
   overflow-y : scroll;
-  padding : 50px 25px 0px;
+  scroll-behavior: smooth !important;
+  padding : 50px 25px 10px;
 }
 
 .message {
@@ -220,6 +220,8 @@ body {
 
 .message-menu {
   position : absolute;
+  border-radius: 8px;
+  background-color: white;
   top : 25px;
   z-index : 100;
   font-size : 0.8rem;
@@ -234,9 +236,19 @@ body {
   white-space: nowrap;
   font-size : 0.9rem;
   color : rgb(88, 88, 88);
-  background-color: white;
   padding : 10px 20px;
-  border-bottom : 1px solid rgb(233, 233, 233);
+}
+
+.message-menu-btn:not(:last-of-type) {
+  border-bottom: 1px solid rgb(233, 233, 233);
+}
+
+.message-menu-btn:first-of-type {
+  border-radius: 8px 8px 0 0;
+}
+
+.message-menu-btn:last-of-type {
+  border-radius: 0 0 8px 8px;
 }
 
 .message-menu-btn:hover {
@@ -253,9 +265,24 @@ body {
   right: -120px;
 }
 
+.scroll-down {
+  position: absolute;
+  top : -40px;
+  right : 30px;
+  border-radius : 50%;
+  width : 30px;
+  height : 30px;
+  text-align : center;
+  line-height : 32px;
+  color : rgb(188, 188, 188);
+  background-color : white;
+  font-size : 0.8rem;
+}
+
 /* /chat content */
 
 .chat-input {
+  position: relative;
   height : 66px;
   background-color : var(--myLightGray);
 }
