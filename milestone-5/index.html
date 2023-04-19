@@ -30,7 +30,7 @@
 <body>
 
   <div id="app">
-    <div class="main-wrapper d-flex justify-content-center align-items-center">
+    <div @click="closeDropdownMenus()" class="main-wrapper d-flex justify-content-center align-items-center">
       <div class="gp-container d-flex bg-white">
 
         <!-- Contacts Column -->
@@ -86,7 +86,7 @@
           <ul class="contacts-list list-unstyled">
             <li
               v-for="contact in filteredContacts"
-              @click="currChatIndex = contact.id, closeDropdownMenus(), replaceInputMessage()"
+              @click="currChatIndex = contact.id, replaceInputMessage()"
               class="contact d-flex d-flex align-items-center p-3">
 
               <div class="circle-img d-flex justify-content-center align-items-center">
@@ -139,12 +139,12 @@
           <!-- /Chat Header -->
 
           <!-- Chat Content -->
-          <div class="chat-content d-flex flex-column">
+          <div class="chat-content d-flex flex-column" :class="{'darkMode-background' : darkMode}">
             <div v-for="(message,index) in contacts[currChatIndex].messages" class="message" :class="message.status === 'sent' ? 'sent' : 'received'">
               <div>{{message.message}}
                 <span class="time-message">{{message.time}}</span>
                 
-                <i @click="closeDropdownMenus(index), message.dropdownVisible = !message.dropdownVisible" class="chevron-message fa-solid fa-chevron-down"></i>
+                <i @click.stop="closeDropdownMenus(index), message.dropdownVisible = !message.dropdownVisible" class="message-chevron fa-solid fa-chevron-down" :class="{'d-block' : message.dropdownVisible}"></i>
 
                 <ul class="message-menu" :class="{'d-block': message.dropdownVisible}">
                   <li class="message-menu-btn">Message Info</li>

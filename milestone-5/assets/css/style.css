@@ -31,7 +31,7 @@ body {
 
 .header-btn:hover,
 .chat-input-btn:hover,
-.chevron-message:hover {
+.message-chevron:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -151,7 +151,7 @@ body {
 /* chat content */
 .chat-content {
   height : calc(100% - 154px);
-  background-image : url("../img/mine.jpg");
+  background-image : url("../img/bg-light.jpg");
   overflow-y : scroll;
   padding : 50px 25px 0px;
 }
@@ -196,7 +196,7 @@ body {
   color: rgb(188, 188, 188);
 }
 
-.chevron-message {
+.message-chevron {
   position : absolute;
   top : 10px;
   right : 10px;
@@ -205,7 +205,7 @@ body {
   display : none;
 }
 
-.message div:hover .chevron-message {
+.message div:hover .message-chevron {
   display : block;
 }
 
@@ -257,4 +257,11 @@ body {
 
 .chat-input .chat-input-btn:last-child:active {
   color : rgb(213, 36, 36);
+}
+
+
+/* Dark Mode */
+.darkMode-background {
+  background-image: url("../img/bg-dark.webp");
+  background-size: contain;
 }

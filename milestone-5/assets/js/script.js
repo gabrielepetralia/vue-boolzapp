@@ -9,6 +9,7 @@ createApp({
       currChatIndex : 0,
       newMessage : "",
       search : "",
+      darkMode : false,
     }
   },
 
