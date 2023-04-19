@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --myLightGray : rgb(245, 245, 245);
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -59,7 +63,7 @@ body {
 .contacts-header,
 .chat-header {
   height: 88px;
-  background-color: rgb(245, 245, 245);
+  background-color: var(--myLightGray);
 }
 
 .notifications {
@@ -83,7 +87,7 @@ body {
 
 .search-chat {
   height: 55px;
-  background-color: rgb(245, 245, 245);
+  background-color: var(--myLightGray);
 }
 
 .search-chat .search-lens {
@@ -103,7 +107,7 @@ body {
 
 .contacts-list {
   height: calc(100% - 231px);
-  background-color: white(155, 224, 241);
+  background-color: white;
   overflow-y : scroll;
 }
 
@@ -115,6 +119,10 @@ body {
 .contacts-list .contact:hover {
   background-color: rgb(240, 240, 240);
   cursor: pointer;
+}
+
+.contacts-list .currContact {
+  background-color: rgb(240, 240, 240);
 }
 
 .contacts-list .contact .last-message,
@@ -248,7 +256,7 @@ body {
 
 .chat-input {
   height : 66px;
-  background-color : rgb(245, 245, 245);
+  background-color : var(--myLightGray);
 }
 
 .chat-input .chat-input-btn {
@@ -261,7 +269,35 @@ body {
 
 
 /* Dark Mode */
-.darkMode-background {
-  background-image: url("../img/bg-dark.webp");
-  background-size: contain;
+.darkMode-background-image {
+  background-image : url("../img/bg-dark.webp");
+  background-size : contain;
+}
+
+.darkMode-background-darkGray {
+  background-color : rgb(49, 49, 49);
+}
+
+.darkMode-background-black {
+  background-color : rgb(31, 31, 31);
+}
+
+.darkMode-background-blackHover:hover {
+  background-color : rgb(42, 42, 42) !important;
+}
+
+.darkMode-currContact {
+  background-color: rgb(42, 42, 42) !important;
+}
+
+.darkMode-borderBottom-black {
+  border-bottom: 1px solid rgb(9, 9, 9) !important;
+}
+
+.darkMode-borderRight-black {
+  border-right: 1px solid rgb(9, 9, 9) !important;
+}
+
+.darkMode-background-mainWrapper {
+  background: linear-gradient(0deg, rgb(64, 64, 61) 84%, rgba(0, 150, 136, 1) 84%);
 }

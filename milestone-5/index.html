@@ -30,20 +30,23 @@
 <body>
 
   <div id="app">
-    <div @click="closeDropdownMenus()" class="main-wrapper d-flex justify-content-center align-items-center">
+    <div
+      @click="closeDropdownMenus()"
+      class="main-wrapper d-flex justify-content-center align-items-center"
+      :class="{'darkMode-background-mainWrapper' : darkMode}">
       <div class="gp-container d-flex bg-white">
 
         <!-- Contacts Column -->
-        <div class="contacts-col">
+        <div class="contacts-col" :class="{'darkMode-borderRight-black' : darkMode}">
 
           <!-- Contacts Header -->
-          <div class="contacts-header d-flex justify-content-between align-items-center p-3">
+          <div class="contacts-header d-flex justify-content-between align-items-center p-3" :class="{'darkMode-background-darkGray' : darkMode}">
 
             <div class="user d-flex justify-content-center align-items-center">
               <div class="circle-img">
                 <img class="img-fluid" src="assets/img/my_avatar.jpg">
               </div>
-              <span class="user-name">Gabriele Petralia</span>
+              <span class="user-name" :class="{'text-white' : darkMode}">Gabriele Petralia</span>
             </div>
 
             <div class="header-btns me-2">
@@ -72,7 +75,7 @@
           <!-- /Notifications -->
 
           <!-- Search Chat -->
-          <div class="search-chat d-flex align-items-center px-3 py-2">
+          <div class="search-chat d-flex align-items-center px-3 py-2" :class="{'darkMode-background-darkGray' : darkMode}">
             <div class="input-group">
               <span class="input-group-text search-lens px-4" id="basic-addon1">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -83,18 +86,18 @@
           <!-- /Search Chat -->
 
           <!-- Contacts List -->
-          <ul class="contacts-list list-unstyled">
+          <ul class="contacts-list list-unstyled" :class="{'darkMode-background-black' : darkMode}">
             <li
-              v-for="contact in filteredContacts"
+              v-for="(contact,index) in filteredContacts"
               @click="currChatIndex = contact.id, replaceInputMessage()"
-              class="contact d-flex d-flex align-items-center p-3">
+              class="contact d-flex align-items-center p-3" :class="{'darkMode-background-blackHover darkMode-borderBottom-black' : darkMode}, {'currContact' : currChatIndex === contact.id}, {'darkMode-currContact' : currChatIndex === contact.id && darkMode}">
 
               <div class="circle-img d-flex justify-content-center align-items-center">
                 <img class="img-fluid" :src="'assets/img/' + contact.avatar">
               </div>
             
               <div>
-                <span class="user-name d-block">{{contact.name}}</span>
+                <span class="user-name d-block" :class="{'text-white' : darkMode}">{{contact.name}}</span>
                 <span v-if="contact.messages.length > 0" class="last-message d-block">{{contact.messages[contact.messages.length - 1].message}}</span>
               </div>
 
@@ -111,7 +114,7 @@
         <div class="chat-col">
           
           <!-- Chat Header -->
-          <div class="chat-header d-flex justify-content-between align-items-center p-3">
+          <div class="chat-header d-flex justify-content-between align-items-center p-3" :class="{'darkMode-background-darkGray' : darkMode}">
           
             <div class="contact d-flex d-flex align-items-center p-3">
               <div class="circle-img d-flex justify-content-center align-items-center">
@@ -119,7 +122,7 @@
               </div>
           
               <div>
-                <span class="user-name d-block">{{contacts[currChatIndex].name}}</span>
+                <span class="user-name d-block" :class="{'text-white' : darkMode}">{{contacts[currChatIndex].name}}</span>
                 <span
                   v-if="contacts[currChatIndex].messages.length > 0"
                   class="last-access d-block">
@@ -130,6 +133,8 @@
             </div>
 
             <div class="header-btns me-2">
+              <i v-if="!darkMode" @click="darkMode = !darkMode" class="header-btn fa-solid fa-moon me-3"></i>
+              <i v-else @click="darkMode = !darkMode" class="header-btn fa-solid fa-sun me-3"></i>
               <i class="header-btn fa-solid fa-magnifying-glass me-3"></i>
               <i class="header-btn fa-solid fa-paperclip me-3"></i>
               <i class="header-btn fa-solid fa-ellipsis-vertical"></i>
@@ -139,7 +144,7 @@
           <!-- /Chat Header -->
 
           <!-- Chat Content -->
-          <div class="chat-content d-flex flex-column" :class="{'darkMode-background' : darkMode}">
+          <div class="chat-content d-flex flex-column" :class="{'darkMode-background-image' : darkMode}">
             <div v-for="(message,index) in contacts[currChatIndex].messages" class="message" :class="message.status === 'sent' ? 'sent' : 'received'">
               <div>{{message.message}}
                 <span class="time-message">{{message.time}}</span>
@@ -157,7 +162,7 @@
           <!-- /Chat Content -->
 
           <!-- Chat Input -->
-          <div class="chat-input d-flex justify-content-around align-items-center">
+          <div class="chat-input d-flex justify-content-around align-items-center" :class="{'darkMode-background-darkGray' : darkMode}">
             
             <i class="chat-input-btn fa-regular fa-face-smile fs-4 mx-5"></i>
 
