@@ -30,7 +30,8 @@ body {
 }
 
 .header-btn:hover,
-.chat-input-btn:hover {
+.chat-input-btn:hover,
+.chevron-message:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -167,21 +168,21 @@ body {
   justify-content : flex-start;
 }
 
-.message p {
+.message div {
   position: relative;
   padding : 15px 35px 20px 20px;
+  margin-bottom : 20px;
   max-width : 600px;
-  overflow: hidden;
   word-wrap: break-word;
 }
 
-.sent p {
+.sent div {
   background-color : rgb(213, 249, 186);
   border-radius : 12px 0px 12px 12px;
   margin-left : 50px;
 }
 
-.received p {
+.received div {
   background-color : white;
   border-radius: 0px 12px 12px 12px;
   margin-right: 50px;
@@ -194,6 +195,55 @@ body {
   font-size : 0.7rem;
   color: rgb(188, 188, 188);
 }
+
+.chevron-message {
+  position : absolute;
+  top : 10px;
+  right : 10px;
+  font-size : 0.8rem;
+  color : rgb(188, 188, 188);
+  display : none;
+}
+
+.message div:hover .chevron-message {
+  display : block;
+}
+
+.message-menu {
+  position : absolute;
+  top : 25px;
+  z-index : 100;
+  font-size : 0.8rem;
+  color: rgb(188, 188, 188);
+  box-shadow : 0px 0px 3px 3px rgba(0,0,0,0.2);
+  padding : 0;
+  display : none;
+}
+
+.message-menu-btn {
+  display : block;
+  white-space: nowrap;
+  font-size : 0.9rem;
+  color : rgb(88, 88, 88);
+  background-color: white;
+  padding : 10px 20px;
+  border-bottom : 1px solid rgb(233, 233, 233);
+}
+
+.message-menu-btn:hover {
+  background-color: rgb(240, 240, 240);
+  cursor: pointer;
+}
+
+
+.sent .message-menu {
+  right: 8px;
+}
+
+.received .message-menu {
+  right: -120px;
+}
+
 /* /chat content */
 
 .chat-input {

@@ -37,6 +37,18 @@ createApp({
         }
         this.contacts[this.currChatIndex].messages.push(answer);
       },1500);
+    },
+
+    closeDropdownMenus(index) {
+      this.contacts.forEach( contact => {
+        contact.messages.forEach( (message,i) => {
+          if(i !== index) message.dropdownVisible = false;
+        })
+      })
+    },
+
+    deleteMessage(index) {
+      this.contacts[this.currChatIndex].messages.splice(index,1);
     }
   },
 

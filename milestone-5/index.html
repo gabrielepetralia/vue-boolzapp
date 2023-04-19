@@ -86,7 +86,7 @@
           <ul class="contacts-list list-unstyled">
             <li
               v-for="contact in filteredContacts"
-              @click="currChatIndex = contact.id"
+              @click="currChatIndex = contact.id, closeDropdownMenus()"
               class="contact d-flex d-flex align-items-center p-3">
 
               <div class="circle-img d-flex justify-content-center align-items-center">
@@ -95,10 +95,10 @@
             
               <div>
                 <span class="user-name d-block">{{contact.name}}</span>
-                <span class="last-message d-block">{{contact.messages[contact.messages.length - 1].message}}</span>
+                <span v-if="contact.messages.length > 0" class="last-message d-block">{{contact.messages[contact.messages.length - 1].message}}</span>
               </div>
 
-              <span class="time">{{contact.messages[contact.messages.length - 1].time}}</span>
+              <span v-if="contact.messages.length > 0" class="time">{{contact.messages[contact.messages.length - 1].time}}</span>
             </li>
           </ul>
           <!-- Contacts List -->
@@ -120,7 +120,8 @@
           
               <div>
                 <span class="user-name d-block">{{contacts[currChatIndex].name}}</span>
-                <span class="last-access d-block">Ultimo accesso giorno {{contacts[currChatIndex].messages[contacts[currChatIndex].messages.length - 1].date}} alle {{contacts[currChatIndex].messages[contacts[currChatIndex].messages.length - 1].time}}</span>
+                <span v-if="contacts[currChatIndex].messages.length > 0" class="last-access d-block">Ultimo accesso giorno {{contacts[currChatIndex].messages[contacts[currChatIndex].messages.length - 1].date}} alle {{contacts[currChatIndex].messages[contacts[currChatIndex].messages.length - 1].time}}</span>
+                <span v-else class="last-access d-block">Ultimo accesso sconosciuto</span>
               </div>
             </div>
 
@@ -135,8 +136,18 @@
 
           <!-- Chat Content -->
           <div class="chat-content d-flex flex-column">
-            <div v-for="message in contacts[currChatIndex].messages" class="message" :class="message.status === 'sent' ? 'sent' : 'received'">
-              <p>{{message.message}}<span class="time-message">{{message.time}}</span></p>
+            <div v-for="(message,index) in contacts[currChatIndex].messages" class="message" :class="message.status === 'sent' ? 'sent' : 'received'">
+              <div>{{message.message}}
+                <span class="time-message">{{message.time}}</span>
+                
+                <i @click="closeDropdownMenus(index), message.dropdownVisible = !message.dropdownVisible" class="chevron-message fa-solid fa-chevron-down"></i>
+
+                <ul class="message-menu" :class="{'d-block': message.dropdownVisible}">
+                  <li class="message-menu-btn">Message Info</li>
+                  <li @click="deleteMessage(index)" class="message-menu-btn">Delete message</li>
+                </ul>
+                
+              </div>
             </div>
           </div>
           <!-- /Chat Content -->
