@@ -62,8 +62,8 @@
           <!-- Notifications -->
           <div class="notifications d-flex align-items-center p-3">
 
-            <div class="circle-img d-flex justify-content-center align-items-center">
-              <i class="bell fa-solid fa-bell-slash"></i>
+            <div @click="notification = !notification" class="bell-notifications circle-img d-flex justify-content-center align-items-center">
+              <i class="fa-solid" :class="notification ? 'fa-bell' : 'fa-bell-slash'"></i>
             </div>
             
             <div>

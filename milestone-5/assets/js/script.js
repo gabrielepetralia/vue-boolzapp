@@ -2,6 +2,9 @@ const { createApp } = Vue;
 import {contacts} from "./db.js";
 const dt = luxon.DateTime;
 
+const messageSentSound = new Audio("assets/sound/message-sent.mp3");
+const messageReceivedSound = new Audio("assets/sound/message-received.mp3");
+
 createApp({
   data() {
     return {
@@ -10,6 +13,7 @@ createApp({
       newMessage : "",
       search : "",
       darkMode : false,
+      notification : true,
     }
   },
 
@@ -26,6 +30,7 @@ createApp({
         this.newMessage = "";
         this.bufferInputMessage();
         this.botAnswerMessage();
+        if(this.notification) messageSentSound.play();
       }
     },
 
@@ -38,6 +43,7 @@ createApp({
           status: 'received'
         }
         this.contacts[this.currChatIndex].messages.push(answer);
+        if(this.notification) messageReceivedSound.play();
       },1500);
     },
 

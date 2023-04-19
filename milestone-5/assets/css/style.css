@@ -76,11 +76,12 @@ body {
   color :rgb(88, 88, 88);
 }
 
-.notifications .active-notifications:hover {
+.notifications .active-notifications:hover,
+.notifications .bell-notifications:hover {
   cursor: pointer;
 }
 
-.notifications .bell {
+.notifications .bell-notifications {
   font-size : 1.4rem;
   color : rgb(155, 224, 241);
 }
