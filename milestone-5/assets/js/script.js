@@ -23,6 +23,7 @@ createApp({
         }
         this.contacts[this.currChatIndex].messages.push(message);
         this.newMessage = "";
+        this.bufferInputMessage();
         this.botAnswerMessage();
       }
     },
@@ -49,6 +50,14 @@ createApp({
 
     deleteMessage(index) {
       this.contacts[this.currChatIndex].messages.splice(index,1);
+    },
+
+    replaceInputMessage() {
+      this.newMessage = this.contacts[this.currChatIndex].inputMessage;
+    },
+
+    bufferInputMessage() {
+      this.contacts[this.currChatIndex].inputMessage = this.newMessage;
     }
   },
 
@@ -57,7 +66,7 @@ createApp({
       return this.contacts.filter( contact => {
         return contact.name.toLowerCase().includes(this.search.toLowerCase())
       })
-    }
+    },
   },
 
   mounted() {

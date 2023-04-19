@@ -3,6 +3,7 @@ const contacts = [
     name: 'Michele',
     avatar: 'avatar_1.jpg',
     id: 0,
+    inputMessage : "",
     messages: [
       {
         date: '10/01/2020',
@@ -31,6 +32,7 @@ const contacts = [
     name: 'Fabio',
     avatar: 'avatar_2.jpg',
     id: 1,
+    inputMessage : "",
     messages: [
       {
         date: '20/03/2020',
@@ -59,6 +61,7 @@ const contacts = [
     name: 'Samuele',
     avatar: 'avatar_3.jpg',
     id: 2,
+    inputMessage : "",
     messages: [
       {
         date: '28/03/2020',
@@ -87,6 +90,7 @@ const contacts = [
     name: 'Alessandro B.',
     avatar: 'avatar_4.jpg',
     id: 3,
+    inputMessage : "",
     messages: [
       {
         date: '10/01/2020',
@@ -108,6 +112,7 @@ const contacts = [
     name: 'Alessandro L.',
     avatar: 'avatar_5.jpg',
     id: 4,
+    inputMessage : "",
     messages: [
       {
         date: '10/01/2020',
@@ -129,6 +134,7 @@ const contacts = [
     name: 'Claudia',
     avatar: 'avatar_6.jpg',
     id: 5,
+    inputMessage : "",
     messages: [
       {
         date: '10/01/2020',
@@ -157,6 +163,7 @@ const contacts = [
     name: 'Federico',
     avatar: 'avatar_7.jpg',
     id: 6,
+    inputMessage : "",
     messages: [
       {
         date: '10/01/2020',
@@ -178,6 +185,7 @@ const contacts = [
     name: 'Davide',
     avatar: 'avatar_8.jpg',
     id: 7,
+    inputMessage : "",
     messages: [
       {
         date: '10/01/2020',

@@ -86,7 +86,7 @@
           <ul class="contacts-list list-unstyled">
             <li
               v-for="contact in filteredContacts"
-              @click="currChatIndex = contact.id, closeDropdownMenus()"
+              @click="currChatIndex = contact.id, closeDropdownMenus(), replaceInputMessage()"
               class="contact d-flex d-flex align-items-center p-3">
 
               <div class="circle-img d-flex justify-content-center align-items-center">
@@ -120,7 +120,11 @@
           
               <div>
                 <span class="user-name d-block">{{contacts[currChatIndex].name}}</span>
-                <span v-if="contacts[currChatIndex].messages.length > 0" class="last-access d-block">Ultimo accesso giorno {{contacts[currChatIndex].messages[contacts[currChatIndex].messages.length - 1].date}} alle {{contacts[currChatIndex].messages[contacts[currChatIndex].messages.length - 1].time}}</span>
+                <span
+                  v-if="contacts[currChatIndex].messages.length > 0"
+                  class="last-access d-block">
+                  Ultimo accesso giorno {{contacts[currChatIndex].messages[contacts[currChatIndex].messages.length - 1].date}} alle {{contacts[currChatIndex].messages[contacts[currChatIndex].messages.length - 1].time}}
+                </span>
                 <span v-else class="last-access d-block">Ultimo accesso sconosciuto</span>
               </div>
             </div>
@@ -157,7 +161,13 @@
             
             <i class="chat-input-btn fa-regular fa-face-smile fs-4 mx-5"></i>
 
-            <input v-model="newMessage" @keyup.enter="addNewMessage" type="text" class="form-control border-0" placeholder="Scrivi un messaggio">
+            <input
+              v-model="newMessage"
+              @keyup="bufferInputMessage"
+              @keyup.enter="addNewMessage"
+              type="text"
+              class="form-control border-0"
+              placeholder="Scrivi un messaggio">
 
             <i class="chat-input-btn fa-solid fa-microphone fs-4 mx-5"></i>
 
