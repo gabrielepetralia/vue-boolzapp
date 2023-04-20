@@ -30,24 +30,25 @@ createApp({
         this.contacts[this.currChatIndex].messages.push(message);
         this.newMessage = "";
         this.bufferInputMessage();
-        this.botAnswerMessage();
+        this.generateAnswerMessage();
         if(this.notification) messageSentSound.play();
         this.scrollDownChat();
       }
     },
 
-    botAnswerMessage() {
+    generateAnswerMessage() {
       setTimeout( () => {
+        const randomAnswerIndex = this.getRandomNumber(0,this.contacts[this.currChatIndex].answers.length - 1)
         const answer = {
           date: dt.now().toFormat("D"),
           time: dt.now().toFormat("t"),
-          message: 'Ok',
+          message: this.contacts[this.currChatIndex].answers[randomAnswerIndex],
           status: 'received'
         }
         this.contacts[this.currChatIndex].messages.push(answer);
         if(this.notification) messageReceivedSound.play();
         this.scrollDownChat();
-      },1500);
+      },this.getRandomNumber(1000,5000));
     },
 
     scrollDownChat() {
@@ -86,6 +87,10 @@ createApp({
 
     bufferInputMessage() {
       this.contacts[this.currChatIndex].inputMessage = this.newMessage;
+    },
+
+    getRandomNumber(min,max) {
+      return Math.floor(Math.random() * (max - min + 1) ) + min;
     }
   },
 
