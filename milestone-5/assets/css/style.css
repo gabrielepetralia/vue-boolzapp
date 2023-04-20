@@ -36,7 +36,8 @@ body {
 .header-btn:hover,
 .chat-input-btn:hover,
 .message-chevron:hover,
-.scroll-down:hover i {
+.scroll-down:hover i,
+.notifications .bell-notifications:hover i {
   transform: scale(1.1);
   cursor: pointer;
 }
